@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sportify-style Demo (no music)</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Google Fonts (optional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+  <header class="topbar">
+    <div class="brand"><span>SoundView</span></div>
+    <div class="controls">
+      <button id="themeToggle" class="btn small">Switch Theme</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Login area (will be replaced by username after successful login) -->
+    <section id="loginSection" class="login-section card">
+      <h2>Welcome to SoundView</h2>
+      <form id="loginForm" class="login-form">
+        <label>
+          Username
+          <input type="text" id="usernameInput" placeholder="Username" autocomplete="username">
+        </label>
+        <label>
+          Password
+          <input type="password" id="passwordInput" placeholder="Password" autocomplete="current-password">
+        </label>
+        <button type="submit" id="loginBtn" class="btn">Log in</button>
+        <p class="hint">Use <strong>Username:</strong> <code>Nkosinathi</code> &nbsp; <strong>Password:</strong> <code>12345</code></p>
+      </form>
+
+      <!-- This will be shown after login; starts hidden -->
+      <div id="welcomeBox" class="welcome-box hidden">
+        <div class="welcome-text"><span id="loggedUsername"></span></div>
+      </div>
+    </section>
+
+    <!-- Grid of thumbnails -->
+    <section class="gallery-section">
+      <h3>Popular Artists</h3>
+      <div id="grid" class="grid">
+        <!-- Card structure: replace the img src with your image URLs (see notes below) -->
+        <article class="card artist-card" data-name="Rihanna">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/rihanna/400/400" alt="Rihanna thumbnail">
+            <div class="overlay">
+              <div class="artist-name">Rihanna</div>
+            </div>
+          </div>
+          <div class="card-actions">
+            <button class="play-btn btn-icon" aria-label="toggle play"></button>
+            <button class="fav-btn btn-icon" aria-label="toggle favorite">♡</button>
+          </div>
+        </article>
+
+        <article class="card artist-card" data-name="Drake">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/drake/400/400" alt="Drake thumbnail">
+            <div class="overlay">
+              <div class="artist-name">Drake</div>
+            </div>
+          </div>
+          <div class="card-actions">
+            <button class="play-btn btn-icon" aria-label="toggle play"></button>
+            <button class="fav-btn btn-icon" aria-label="toggle favorite">♡</button>
+          </div>
+        </article>
+
+        <article class="card artist-card" data-name="Beyoncé">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/beyonce/400/400" alt="Beyoncé thumbnail">
+            <div class="overlay">
+              <div class="artist-name">Beyoncé</div>
+            </div>
+          </div>
+          <div class="card-actions">
+            <button class="play-btn btn-icon" aria-label="toggle play"></button>
+            <button class="fav-btn btn-icon" aria-label="toggle favorite">♡</button>
+          </div>
+        </article>
+
+        <article class="card artist-card" data-name="Kanye West">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/kanye/400/400" alt="Kanye thumbnail">
+            <div class="overlay">
+              <div class="artist-name">Kanye West</div>
+            </div>
+          </div>
+          <div class="card-actions">
+            <button class="play-btn btn-icon" aria-label="toggle play"></button>
+            <button class="fav-btn btn-icon" aria-label="toggle favorite">♡</button>
+          </div>
+        </article>
+
+        <article class="card artist-card" data-name="Adele">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/adele/400/400" alt="Adele thumbnail">
+            <div class="overlay">
+              <div class="artist-name">Adele</div>
+            </div>
+          </div>
+          <div class="card-actions">
+            <button class="play-btn btn-icon" aria-label="toggle play"></button>
+            <button class="fav-btn btn-icon" aria-label="toggle favorite">♡</button>
+          </div>
+        </article>
+
+        <article class="card artist-card" data-name="Travis Scott">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/travis/400/400" alt="Travis thumbnail">
+            <div class="overlay">
+              <div class="artist-name">Travis Scott</div>
+            </div>
+          </div>
+          <div class="card-actions">
+            <button class="play-btn btn-icon" aria-label="toggle play"></button>
+            <button class="fav-btn btn-icon" aria-label="toggle favorite">♡</button>
+          </div>
+        </article>
+
+        <article class="card artist-card" data-name="Nicki Minaj">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/nicki/400/400" alt="Nicki thumbnail">
+            <div class="overlay">
+              <div class="artist-name">Nicki Minaj</div>
+            </div>
+          </div>
+          <div class="card-actions">
+            <button class="play-btn btn-icon" aria-label="toggle play"></button>
+            <button class="fav-btn btn-icon" aria-label="toggle favorite">♡</button>
+          </div>
+        </article>
+
+        <article class="card artist-card" data-name="Chris Brown">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/chris/400/400" alt="Chris thumbnail">
+            <div class="overlay">
+              <div class="artist-name">Chris Brown</div>
+            </div>
+          </div>
+          <div class="card-actions">
+            <button class="play-btn btn-icon" aria-label="toggle play"></button>
+            <button class="fav-btn btn-icon" aria-label="toggle favorite">♡</button>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Popup for selected artist -->
+  <div id="popup" class="popup hidden">
+    <div class="popup-inner card">
+      <button id="popupClose" class="btn small">Close ✖</button>
+      <div id="popupContent" class="popup-content"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© SoundView • Demo only • No music served</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

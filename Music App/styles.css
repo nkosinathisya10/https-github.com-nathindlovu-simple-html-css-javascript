@@ -1,0 +1,208 @@
+/* styles.css
+   Clean, modern theme inspired by streaming apps.
+   Comments are focused here (as you asked).
+*/
+
+/* Reset-ish */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height: 100%; font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+
+/* Theme colors */
+:root{
+  --bg1: #0b0f12;
+  --bg2: #15181b;
+  --card: rgba(255,255,255,0.03);
+  --accent: #1DB954; /* bright green */
+  --muted: rgba(255,255,255,0.6);
+  --glass: rgba(255,255,255,0.04);
+}
+
+/* Light theme overrides */
+.light-theme {
+  --bg1: #f6f7fb;
+  --bg2: #e9eef8;
+  --card: rgba(0,0,0,0.03);
+  --accent: #0f7bff;
+  --muted: rgba(0,0,0,0.7);
+  --glass: rgba(0,0,0,0.03);
+}
+
+/* Body + layout */
+body {
+  min-height: 100%;
+  background: linear-gradient(180deg, var(--bg1), var(--bg2));
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Topbar */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  backdrop-filter: blur(6px);
+  background: linear-gradient(90deg, rgba(255,255,255,0.02), transparent);
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+.brand { font-weight:700; font-size:1.1rem; display:flex; gap:.5rem; align-items:center; }
+.controls .btn { opacity:0.95; }
+
+/* Container main */
+.container {
+  width: min(1100px, 95%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 1.6rem;
+  align-items: start;
+  padding-bottom: 2rem;
+}
+
+/* Login card */
+.login-section {
+  position: sticky;
+  top: 1rem;
+  padding: 1.2rem;
+  border-radius: 14px;
+  background: linear-gradient(180deg, var(--card), rgba(255,255,255,0.01));
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+}
+.login-section h2 { margin-bottom: .8rem; font-weight:600; color:var(--muted); }
+.login-form label {
+  display:block;
+  margin-bottom: .6rem;
+  font-size: .9rem;
+  color: var(--muted);
+}
+.login-form input {
+  width:100%;
+  padding:.6rem .8rem;
+  border-radius:8px;
+  border: none;
+  margin-top: .3rem;
+  background: var(--glass);
+  color: inherit;
+  outline: none;
+}
+.btn {
+  display:inline-block;
+  padding:.6rem .9rem;
+  border-radius:10px;
+  border:none;
+  cursor:pointer;
+  background: linear-gradient(90deg,var(--accent), color-mix(in srgb, var(--accent) 70%, black));
+  color: #fff;
+  font-weight:600;
+  margin-top:.6rem;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+.btn.small { padding:.35rem .6rem; font-weight:600; border-radius:8px; font-size:.85rem; }
+
+/* Hidden utility class */
+.hidden { display:none !important; }
+
+/* Welcome box shown after login (same place as form) */
+.welcome-box { display:flex; align-items:center; justify-content:center; height:120px; font-size:1.1rem; color:var(--muted); }
+
+/* Gallery layout */
+.gallery-section {
+  padding: 1rem;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+}
+.gallery-section h3 { margin-bottom: 1rem; color:var(--muted); font-size:1.1rem; }
+
+/* Grid of cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+/* Artist card */
+.card {
+  border-radius: 12px;
+  overflow: hidden;
+  background: transparent;
+  transition: transform .18s ease, box-shadow .18s ease;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  min-height: 220px;
+  position: relative;
+}
+.card:hover { transform: translateY(-6px); box-shadow: 0 18px 50px rgba(0,0,0,0.6); }
+
+.thumb { position:relative; overflow:hidden; border-radius:12px; height: 180px; display:block; }
+.thumb img { width:100%; height:100%; object-fit:cover; display:block; transition: transform .35s ease; }
+
+/* Overlay with artist name */
+.overlay {
+  position:absolute;
+  left:0; right:0; bottom:0;
+  padding: .6rem;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,0.45));
+  transform: translateY(0);
+}
+.artist-name { font-weight:700; font-size:1rem; color:#fff; text-shadow: 0 3px 12px rgba(0,0,0,0.6); }
+
+/* Hovered state toggled by JS (extra effect) */
+.artist-card.hovered img { transform: scale(1.12) rotate(-1deg); filter: contrast(1.05) saturate(1.05); }
+.artist-card.hovered .overlay { transform: translateY(-6px); }
+
+/* Card actions (play + fav) */
+.card-actions {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:.55rem .6rem;
+}
+.btn-icon {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--muted);
+  transition: transform .12s ease, color .12s ease;
+}
+.btn-icon:hover { transform: scale(1.12); color: var(--accent); }
+
+/* Play visual toggle */
+.play-btn.playing::after {
+  content: "⏸";
+}
+.play-btn::after { content: "▶"; }
+
+/* Favorite toggle */
+.fav-btn.favorited { color: var(--accent); transform: scale(1.08); }
+.fav-btn.favorited::after { content: "♥"; }
+
+/* Popup */
+.popup {
+  position: fixed;
+  inset: 0;
+  display:grid;
+  place-items:center;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+.popup-inner {
+  width: min(560px, 94%);
+  padding: 1rem;
+  border-radius: 12px;
+  background: linear-gradient(180deg, var(--card), rgba(255,255,255,0.02));
+}
+.popup-content { padding: .6rem 0; color: var(--muted); font-size:1rem; }
+
+/* Footer */
+.footer { text-align:center; padding:1rem 0; color:var(--muted); font-size:.9rem; border-top:1px solid rgba(255,255,255,0.02); }
+
+/* Responsive */
+@media (max-width: 880px) {
+  .container { grid-template-columns: 1fr; }
+  .login-section { position: static; }
+}
