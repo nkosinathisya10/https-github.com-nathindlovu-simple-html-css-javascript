@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VisionCare Optometry</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- LOGIN SECTION -->
+  <div id="login-box">
+    <h2>Optometrist Login</h2>
+
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+
+    <button id="login-btn">Login</button>
+
+    <p><strong>Username: Nkosinathi and Password: 12345</strong></p>
+  </div>
+
+  <!-- HEADER -->
+  <header id="main-header" class="hidden">
+    <h1>VisionCare Optometry</h1>
+    <button id="theme-btn">Change Theme</button>
+  </header>
+
+  <!-- GREETING -->
+  <h2 id="greeting" class="hidden"></h2>
+
+  <!-- SERVICES SECTION -->
+  <section id="services-section" class="hidden">
+    <h2>Our Services</h2>
+
+    <div class="service-grid">
+
+      <div class="service-card">
+        <img src="https://www.shutterstock.com/image-photo/little-patient-undergoes-eye-test-600nw-2479049339.jpg" alt="Eye Test">
+        <h3>Eye Testing</h3>
+      </div>
+
+      <div class="service-card">
+        <img src="https://media.targetoptical.com/2023/Service-LP/Doc-D.jpg" alt="Glasses">
+        <h3>Prescription Glasses</h3>
+      </div>
+
+      <div class="service-card">
+        <img src="https://visualeyesoptometrists.com/images/contact-lens.jpg" alt="Contact Lenses">
+        <h3>Contact Lenses</h3>
+      </div>
+
+      <div class="service-card">
+        <img src="https://img.freepik.com/free-photo/handsome-man-using-eye-drops-close-up_23-2148696715.jpg?semt=ais_hybrid&w=740&q=80" alt="Treatment">
+        <h3>Eye Condition Treatment</h3>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- POPUP -->
+  <div id="popup" class="hidden">
+    <p id="popup-text"></p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

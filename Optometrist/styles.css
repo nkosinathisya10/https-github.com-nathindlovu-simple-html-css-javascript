@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  background: #0d1b2a;
+  color: white;
+  transition: 0.4s;
+}
+
+/* LOGIN BOX */
+#login-box {
+  width: 320px;
+  background: #1b263b;
+  padding: 20px;
+  margin: 80px auto;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 15px #1b9aaa;
+}
+
+#login-box input, #login-box button {
+  display: block;
+  width: 90%;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 8px;
+  border: none;
+}
+
+#login-btn {
+  background: #1b9aaa;
+  color: white;
+  cursor: pointer;
+}
+
+#login-btn:hover {
+  background: #28c5d8;
+}
+
+/* HIDDEN CLASS */
+.hidden {
+  display: none;
+}
+
+/* HEADER */
+header {
+  background: #1b263b;
+  padding: 20px;
+  text-align: center;
+}
+
+#theme-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #1b9aaa;
+  color: white;
+}
+
+/* SERVICES */
+#services-section {
+  padding: 30px;
+  text-align: center;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.service-card {
+  background: #1b263b;
+  padding: 15px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #1b9aaa;
+}
+
+.service-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* POPUP */
+#popup {
+  position: fixed;
+  width: 300px;
+  background: #1b263b;
+  padding: 20px;
+  border-radius: 12px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  box-shadow: 0 0 20px #1b9aaa;
+}
