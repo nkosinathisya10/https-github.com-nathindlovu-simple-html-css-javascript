@@ -1,0 +1,133 @@
+/* GLOBAL STYLES */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #0d1b2a; /* JS will toggle this */
+    color: white;
+}
+
+/* Reusable box styling (Box Model) */
+.box {
+    border: 2px solid silver;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px;
+    background-color: #1b263b;
+    box-shadow: 0 0 15px #1b9aaa;
+}
+
+/* Hide elements when needed */
+.hidden {
+    display: none;
+}
+
+/* LOGIN SECTION */
+
+#login-section {
+    width: 350px;
+    margin: 120px auto;
+    text-align: center;
+}
+
+/* Login error message */
+#login-error {
+    color: red;
+    display: none;
+    margin-bottom: 10px;
+}
+
+/* Input fields */
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 15px;
+    border: 1px solid gray;
+    outline: none;
+}
+
+/* BUTTON STYLES */
+
+button {
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: none;
+    background-color: navy;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: steelblue;
+    transform: scale(1.05);
+}
+
+/* HEADER */
+
+.header {
+    text-align: center;
+}
+
+/* FIXTURES SECTION */
+
+/* Flex container for fixtures */
+.fixtures {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Individual fixture card */
+.fixture {
+    width: 100%;
+    margin-bottom: 20px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Fixture hover effect */
+.fixture:hover {
+    background-color: rgba(25, 25, 112, 0.85);
+    transform: scale(1.02);
+}
+
+/* PAYMENT SECTION */
+
+#payment-section {
+    width: 420px;          /* NOT full width */
+    margin: 80px auto;     /* Centered */
+    text-align: center;
+}
+
+/* FINAL TICKET SECTION */
+
+#final-ticket {
+    width: 420px;          /* Centered ticket */
+    margin: 80px auto;
+    text-align: center;
+}
+
+/* Barcode number */
+.barcode-number {
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+/* Barcode image */
+.barcode {
+    width: 300px;
+    height: auto;
+    border: 2px solid white;
+    border-radius: 15px;
+    display: block;
+    margin: 15px auto;
+}
+
+/* Hover effect for ticket box */
+#final-ticket:hover {
+    background-color: rgba(47, 79, 79, 0.85);
+}

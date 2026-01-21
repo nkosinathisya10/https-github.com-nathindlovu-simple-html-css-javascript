@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Viewport for Responsive Design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Got Tickets</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- LOGIN CONTAINER -->
+<section id="login-section" class="box">
+    <h2>Login</h2>
+
+    <!-- Error message shown only when login fails -->
+    <p id="login-error">Incorrect username or password</p>
+
+    <form>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button type="button" id="login-btn">Login</button>
+    </form>
+    <p>Username: User and Password: 1234</p>          <!-- Login Credentials -->
+</section>
+
+<!-- MAIN CONTENT -->
+<section id="main-section" class="hidden">
+
+    <header class="box header">
+        <h1>Got Tickets</h1>
+        <p id="greeting"></p>
+        <button id="color-btn">Change Background</button>
+    </header>
+
+    <!-- FIXTURES CONTAINER will only appear after a successful login -->
+    <section class="fixtures">
+
+        <div class="fixture box">
+            <h3>Team A vs Team B</h3>
+            <p>Date: 15 June 2026</p>
+            <p>Stadium: Paris Arena</p>
+            <p>Price: R120</p>
+            <button class="buy-btn">Buy Ticket</button>
+        </div>
+
+        <div class="fixture box">
+            <h3>Team C vs Team D</h3>
+            <p>Date: 20 June 2026</p>
+            <p>Stadium: Lyon Stadium</p>
+            <p>Price: R150</p>
+            <button class="buy-btn">Buy Ticket</button>
+        </div>
+
+        <div class="fixture box">
+            <h3>Team E vs Team F</h3>
+            <p>Date: 25 June 2026</p>
+            <p>Stadium: Marseille Dome</p>
+            <p>Price: R100</p>
+            <button class="buy-btn">Buy Ticket</button>
+        </div>
+
+    </section>
+</section>
+
+<!-- PAYMENT SECTION Will only Appear after the buy ticket button is clicked-->
+<section id="payment-section" class="hidden box">
+    <h2>Confirm Ticket</h2>
+    <p id="ticket-info"></p>
+    <button id="pay-btn">Pay</button>
+    <button id="back-home">Go Back</button>      <!-- Will take you back to previous page -->
+</section>
+
+<!-- FINAL TICKET will only appear if the pay button is clicked -->
+<section id="final-ticket" class="hidden box">
+    <h2>Your Ticket</h2>
+    <p id="final-info"></p>
+
+    <p class="barcode-number">847392018475</p>
+
+    <img src="https://img.freepik.com/free-psd/barcode-illustration-isolated_23-2150584094.jpg?semt=ais_hybrid&w=740&q=80"
+         alt="Barcode" class="barcode">
+
+    <button id="restart">Back To Homepage</button>    <!-- Will take you back to home page -->
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
